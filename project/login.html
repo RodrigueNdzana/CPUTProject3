@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Hub / loginPage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> <!--external plugin-->
+  <script class="jsbin" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script> <!--external plugin-->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="javaScript/registerinsert.js"></script>
+  <!-- Javascript for the link in order for it to toggler and display the registration page-->
+
+</head>
+
+<body>
+  <!-- first nav -->
+  <div class="first_nav">
+
+    <div id="social_media">
+      <div class="containerfa">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="help_email">
+      <a href="#" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+        ctsservicedesk@cput.ac.za.
+      </a>
+      <a href="#" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i>
+        Student Support 
+      </a>
+    </div>
+
+    <div class="login_orregister">
+      <a href="#" target="_blank"><i class="fa fa-user" aria-hidden="true"></i>
+        login
+      </a>
+      <a href="#" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i>
+        Register
+      </a>
+    </div>
+
+  </div>
+
+  <!-- log in  and registration container-->
+  <div class="login_page">
+    <div class="form">
+
+      <!-- register form  of the page-->
+      <form method="POST" action="#" class="register_form " name="myform">
+        <header>
+          <h1>
+             Before having access to be chatbot we would like you to register as a Student.
+          </h1>
+        </header>
+        <input name="fullName" id="fullName" type="text" placeholder="Full name..." required />
+        <br />
+        <br />
+        <input name="email" id="email" type="email" placeholder="Enter your student email..." required />
+
+        <br />
+        <br />
+      
+        <div class="input-group" id="show_hide_password">
+          <input name="password" id="password" class="form-control" type="password" placeholder="password..." required />
+
+          <div class="input-group-addon">
+            <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <!-- show and hide password contained div session -->
+        <div class="input-group" id="show_hide_password">
+          <input name="confirmPassword" id="confirm" class="form-control" type="password" placeholder="Comfirn Password..." required />
+          <div class="input-group-addon">
+            <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <br />
+        <br />
+        <!-- register button -->
+        <button type="button" class="login_register" onclick="insert()">Register</button>
+        <br />
+        <br />
+        <p class="message"> Already registerered ?<a href="#Login" class="link">login</a></p>
+      </form>
+      
+      <script src="javaScript/registerinsert.js"></script>
+
+      <!-- Log in form  of the page-->
+
+      <form class="login_form login" id="Login">
+        <header>
+          <h1>
+            Welcome back login.
+          </h1>
+        </header>
+        <input id="loginemail" type="email" placeholder="Student Email..." required />
+        <br />
+        <br />
+        <input id="loginpassword" type="password" placeholder="Password..." required />
+        <br />
+        <br />
+        <input type="button" value="Login" class="login_register" onclick="validate()">
+        <br />
+        <br />
+        <span>
+          Forgot <a href="#" target="_blank"> Password </a> or
+          <a href="#" target="_blank"> Email ?</a>
+        </span>
+        <p class="message">Not Register ? <a href="#Register" class="link"> Register</a></p>
+      </form>
+      <div id="display"></div>  <!--display div to show the information of the user in the form after register-->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> <!---External js plugin for jquery script-->
+  <script type="text/javaScript" src="javaScript/loginregistertoogle.js"></script>  <!--Toogle js to allow the user to go to the register page or login by clicking the link -->
+  <script src="javaScript/registerinsert.js"></script>  <!--The insert js file to insert datat on the form-->
+  <script src="javaScript/showpassword.js"></script>   <!--Hide and show password javaScriot file-->
+
+</body>
+
+</html>
