@@ -12,10 +12,14 @@ var confirmPasswordInput = document.getElementById("confirm");
 var messageBox = document.getElementById("display"); // display div to display the information of the users
 
 function insert() {
+  checkIfUserExist();
   if (
-    passwordInput.value != confirmPasswordInput.value ||
-    fullNameInput.value == "" ||
-    emailtInput.value.includes("@mycput.ac.za") == ""
+    passwordInput.value != confirmPasswordInput.value || // checking the equally of password
+    fullNameInput.value == "" ||                         // checking if the full name textfield has been left blank
+    emailtInput.value.includes("@mycput.ac.za") == "" ||  // checking that the email validation
+    passwordInput.value == "" ||    // checking if the password Input textfield has been left blank
+    confirmPasswordInput == ""     // checking if the confirm  PasswordInput  textfield has been left blank
+  
   ) {
     alert(
       "Error message please enter the correct input value and try again. Like email and password must be correct"
@@ -28,6 +32,20 @@ function insert() {
   Password.push(passwordInput.value);
   confirmPassword.push(confirmPasswordInput.value);
   clearAndShow(); // after this call the clear and show function to clear the input and still display textboxes
+  
+}
+function checkIfUserExist(){
+  var registerEmailFormId = document.getElementById("email").value;
+  var registerFullNameFormId = document.getElementById("fullName").value;
+  for (let index = 0; index < Email.length; index++) {
+    if (Email[index]== registerEmailFormId && FullName[index] == registerFullNameFormId){
+      alert("You already have an account with us please Login to access the bot");
+      clearAndShow();
+      return false;
+    }
+   
+  }
+  
 }
 
 function clearAndShow() {
@@ -52,9 +70,11 @@ function clearAndShow() {
 var userEmailFound = false;
 var userPasswordFound = false;
 function validate() {
+  
   validateUserEmail();
   validateUserPassword();
   alertTheUser();
+  
 }
 function validateUserEmail() {
   var usersEmailFormId = document.getElementById("loginemail").value;
